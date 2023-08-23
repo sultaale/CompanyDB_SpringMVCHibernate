@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public class EmployeeDaoImpl implements EmployeeDao {
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     @Autowired
     public EmployeeDaoImpl(SessionFactory sessionFactory) {
