@@ -1,8 +1,5 @@
 # CompanyDB_SpringMVCHibernate
-Aston Homeworks
+Code review for Alexandra - Aston Homeworks 
 
-This is a CRUD application with 
-PostgreSQL Database
-Spring MVC
-Hibernate 
+
 
