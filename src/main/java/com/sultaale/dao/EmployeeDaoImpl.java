@@ -23,7 +23,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public List<Employee> getEmployees() {
         Session session  = sessionFactory.getCurrentSession();
         List<Employee> allEmployees = session.createQuery("from Employee", Employee.class).getResultList();
-        System.out.println(allEmployees.size());
+        System.out.println(allEmployees.size());    //AP: Для вывода отладочной информации лучше использовать логирование
         return allEmployees;
     }
 
