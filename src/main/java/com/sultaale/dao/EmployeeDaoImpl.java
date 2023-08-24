@@ -23,7 +23,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public List<Employee> getEmployees() {
         Session session  = sessionFactory.getCurrentSession();
         List<Employee> allEmployees = session.createQuery("from Employee", Employee.class).getResultList();
-        System.out.println(allEmployees.size());
         return allEmployees;
     }
 
@@ -36,7 +35,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public Employee getEmployee(int id) {
         Session session = sessionFactory.getCurrentSession();
-        return session.get(Employee.class, id);
+        Employee employee = session.get(Employee.class, id);
+        return employee;
     }
 
     @Override
