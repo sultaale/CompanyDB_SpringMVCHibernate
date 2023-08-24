@@ -23,7 +23,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public List<Employee> getEmployees() {
         Session session  = sessionFactory.getCurrentSession();
         List<Employee> allEmployees = session.createQuery("from Employee", Employee.class).getResultList();
-        System.out.println(allEmployees.size());    //AP: Для вывода отладочной информации лучше использовать логирование
         return allEmployees;
     }
 
@@ -37,6 +36,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public Employee getEmployee(int id) {
         Session session = sessionFactory.getCurrentSession();
         Employee employee = session.get(Employee.class, id);
-        return null;  // AP: здесь лучше возвpатить employee
+        return employee;
+    }
+
+    @Override
+    public void delete(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        session.remove(session.get(Employee.class, id));
     }
 }
