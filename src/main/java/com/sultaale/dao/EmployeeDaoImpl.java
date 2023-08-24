@@ -33,6 +33,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
         session.save(employee);
     }
 
+    @Override
     public Employee getEmployee(int id) {
         Session session = sessionFactory.getCurrentSession();
         return session.get(Employee.class, id);
