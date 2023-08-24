@@ -37,6 +37,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public Employee getEmployee(int id) {
         Session session = sessionFactory.getCurrentSession();
         Employee employee = session.get(Employee.class, id);
-        return null;
+        return null;  // AP: здесь лучше возвpатить employee
     }
 }
