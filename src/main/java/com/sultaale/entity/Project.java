@@ -10,7 +10,7 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private int id;//АР: для id предпочтительнее использование long
 
     @Column(name = "name")
     private String name;
