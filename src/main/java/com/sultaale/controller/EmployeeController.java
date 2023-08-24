@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@Controller
+@Controller  //AP: в приложении не хватает контроллеров для ролей и проектов
 public class EmployeeController {
     private final EmployeeService employeeService;
 
