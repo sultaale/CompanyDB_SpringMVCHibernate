@@ -33,10 +33,14 @@ public class EmployeeDaoImpl implements EmployeeDao {
         session.save(employee);
     }
 
-    @Override
     public Employee getEmployee(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Employee employee = session.get(Employee.class, id);
-        return null;
+        return session.get(Employee.class, id);
+    }
+
+    @Override
+    public void delete(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        session.remove(session.get(Employee.class, id));
     }
 }
