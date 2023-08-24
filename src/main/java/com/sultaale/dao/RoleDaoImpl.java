@@ -14,7 +14,7 @@ import java.util.List;
 public class RoleDaoImpl implements RoleDao{
     private SessionFactory sessionFactory;
 
-    @Autowired
+    @Autowired  //АР: в конструкторе нужен Awtowired?
     public RoleDaoImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
@@ -23,12 +23,12 @@ public class RoleDaoImpl implements RoleDao{
     @Override
     @Transactional
     public List<Role> allRoles() {
-        Session session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();  //АР: @PersistenceContext?
         List<Role> roles = session.createQuery("select p from Role p", Role.class).getResultList();
         return roles;
     }
 
-    @Transactional
+    @Transactional //AP: @Override аннотация рекомендуется к использованию
     public List<Employee> getEmployeeByRole(int id) {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("select p from Employee p where p.role.id = :role_Id");
@@ -38,7 +38,7 @@ public class RoleDaoImpl implements RoleDao{
         return employees;
     }
 
-    @Transactional
+    @Transactional  //AP: @Override аннотация рекомендуется к использованию
     public void delete(int id) {
         Session session = sessionFactory.getCurrentSession();
         session.remove(session.get(Role.class, id));
