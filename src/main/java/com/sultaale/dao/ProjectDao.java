@@ -5,7 +5,7 @@ import com.sultaale.entity.Project;
 
 import java.util.List;
 
-public interface ProjectDao {
+public interface ProjectDao {  // АР: для CRUD нужен update  и delete методы
 
     public List<Project> getAllProjects();
     public void save(Project project);

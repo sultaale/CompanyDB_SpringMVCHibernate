@@ -35,6 +35,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     @Transactional
     public Employee delete(int id) {
-        return null;
+        return null;  //АР: метод ничего не удаляет, т.к его не с чем связать в EmployeeDao?
     }
 }

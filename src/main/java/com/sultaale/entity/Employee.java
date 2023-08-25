@@ -6,12 +6,12 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "staff")
+@Table(name = "staff")  //AP : в pojo классе желательно переопределять equals / hashcode
 public class Employee {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id")
-        private int id;
+        private int id;  //АР для id предпочтительнее использование long
 
         @Column(name = "name")
         private String name;
